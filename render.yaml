@@ -20,7 +20,7 @@ services:
         value: admin
       - key: ADMIN_SEED_PASS
         generateValue: true
-  - type: static
+  - type: static_site
     name: prode-frontend
     rootDir: frontend
     buildCommand: npm install && npm run build
