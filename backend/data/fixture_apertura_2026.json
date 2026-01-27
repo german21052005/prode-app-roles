@@ -1,0 +1,187 @@
+{
+  "season": 2026,
+  "tournament": "LPF Apertura 2026",
+  "timezone": "America/Argentina/Buenos_Aires",
+  "matches": [
+    {
+      "round": 1,
+      "home": "Aldosivi",
+      "away": "Defensa y Justicia",
+      "start_time": "2026-01-22T17:00:00-03:00"
+    },
+    {
+      "round": 1,
+      "home": "Unión",
+      "away": "Platense",
+      "start_time": "2026-01-22T20:00:00-03:00"
+    },
+    {
+      "round": 1,
+      "home": "Banfield",
+      "away": "Huracán",
+      "start_time": "2026-01-22T20:00:00-03:00"
+    },
+    {
+      "round": 1,
+      "home": "Central Córdoba",
+      "away": "Gimnasia (Mza.)",
+      "start_time": "2026-01-22T22:15:00-03:00"
+    },
+    {
+      "round": 1,
+      "home": "Instituto",
+      "away": "Vélez",
+      "start_time": "2026-01-22T22:15:00-03:00"
+    },
+    {
+      "round": 1,
+      "home": "San Lorenzo",
+      "away": "Lanús",
+      "start_time": "2026-01-23T17:45:00-03:00"
+    },
+    {
+      "round": 1,
+      "home": "Independiente",
+      "away": "Estudiantes",
+      "start_time": "2026-01-23T20:00:00-03:00"
+    },
+    {
+      "round": 1,
+      "home": "Talleres",
+      "away": "Newell’s",
+      "start_time": "2026-01-23T22:15:00-03:00"
+    },
+    {
+      "round": 1,
+      "home": "Independiente Rivadavia",
+      "away": "Atlético Tucumán",
+      "start_time": "2026-01-23T22:15:00-03:00"
+    },
+    {
+      "round": 1,
+      "home": "Barracas Central",
+      "away": "River",
+      "start_time": "2026-01-24T17:00:00-03:00"
+    },
+    {
+      "round": 1,
+      "home": "Gimnasia",
+      "away": "Racing",
+      "start_time": "2026-01-24T19:30:00-03:00"
+    },
+    {
+      "round": 1,
+      "home": "Rosario Central",
+      "away": "Belgrano",
+      "start_time": "2026-01-24T22:00:00-03:00"
+    },
+    {
+      "round": 1,
+      "home": "Boca",
+      "away": "Deportivo Riestra",
+      "start_time": "2026-01-25T18:30:00-03:00"
+    },
+    {
+      "round": 1,
+      "home": "Tigre",
+      "away": "Estudiantes (RC)",
+      "start_time": "2026-01-25T21:00:00-03:00"
+    },
+    {
+      "round": 1,
+      "home": "Argentinos",
+      "away": "Sarmiento",
+      "start_time": "2026-01-25T21:00:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "Platense",
+      "away": "Instituto",
+      "start_time": "2026-01-26T17:00:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "Vélez",
+      "away": "Talleres",
+      "start_time": "2026-01-27T17:45:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "Gimnasia (Mza.)",
+      "away": "San Lorenzo",
+      "start_time": "2026-01-27T20:00:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "Huracán",
+      "away": "Independiente Rivadavia",
+      "start_time": "2026-01-27T20:00:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "Newell’s",
+      "away": "Independiente",
+      "start_time": "2026-01-27T22:15:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "Atlético Tucumán",
+      "away": "Central Córdoba",
+      "start_time": "2026-01-27T22:15:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "Aldosivi",
+      "away": "Barracas Central",
+      "start_time": "2026-01-28T17:00:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "Racing",
+      "away": "Rosario Central",
+      "start_time": "2026-01-28T19:00:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "River",
+      "away": "Gimnasia",
+      "start_time": "2026-01-28T20:00:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "Estudiantes",
+      "away": "Boca",
+      "start_time": "2026-01-28T22:15:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "Deportivo Riestra",
+      "away": "Defensa y Justicia",
+      "start_time": "2026-01-29T17:00:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "Lanús",
+      "away": "Unión",
+      "start_time": "2026-01-29T19:15:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "Belgrano",
+      "away": "Tigre",
+      "start_time": "2026-01-29T19:15:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "Estudiantes (RC)",
+      "away": "Argentinos",
+      "start_time": "2026-01-29T21:30:00-03:00"
+    },
+    {
+      "round": 2,
+      "home": "Sarmiento",
+      "away": "Banfield",
+      "start_time": "2026-01-29T21:30:00-03:00"
+    }
+  ]
+}
