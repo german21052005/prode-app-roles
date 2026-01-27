@@ -1,7 +1,7 @@
 services:
   - type: web
     name: prode-backend
-    env: node
+    runtime: node
     rootDir: backend
     buildCommand: "npm install"
     startCommand: "node server.js"
@@ -20,14 +20,15 @@ services:
       - key: ADMIN_SEED_PASS
         generateValue: true
 
-  - type: static_site
+  - type: web
     name: prode-frontend
+    runtime: static
     rootDir: frontend
     buildCommand: "npm install && npm run build"
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: ""  # set after backend is up
+        value: "" # completar después del deploy del backend (y hacer Rebuild)
 
 databases:
   - name: prode-db
