@@ -1,11 +1,10 @@
-
 services:
   - type: web
     name: prode-backend
     env: node
     rootDir: backend
-    buildCommand: npm install
-    startCommand: node server.js
+    buildCommand: "npm install"
+    startCommand: "node server.js"
     autoDeploy: true
     envVars:
       - key: DATABASE_URL
@@ -20,10 +19,11 @@ services:
         value: admin
       - key: ADMIN_SEED_PASS
         generateValue: true
+
   - type: static_site
     name: prode-frontend
     rootDir: frontend
-    buildCommand: npm install && npm run build
+    buildCommand: "npm install && npm run build"
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
