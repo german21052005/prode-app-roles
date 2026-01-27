@@ -61,7 +61,7 @@ export async function bootstrap(){
   // Seed fixture if empty
   const check = await pool.query('SELECT COUNT(*)::int AS c FROM matches');
   if (check.rows[0].c === 0) {
-    const dataPath = path.join(__dirname, 'data', 'fixture_apertura_2026.json');
+    const dataPath = path.join(__dirname, '..','data', 'fixture_apertura_2026.json');
     try{
       const json = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
       for(const m of json.matches){
