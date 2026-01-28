@@ -35,6 +35,7 @@ router.get('/', async (_, res) => {
     SELECT u.username, COALESCE(SUM(s.points),0) AS total
     FROM users u
     LEFT JOIN scores s ON s.user_id = u.id
+    where u.role <> 'admin'
     GROUP BY u.username
     ORDER BY total DESC, u.username ASC
   `;

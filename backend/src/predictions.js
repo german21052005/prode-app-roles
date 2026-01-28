@@ -11,6 +11,10 @@ router.get('/mine', requireAuth, async (req, res) => {
 });
 
 router.post('/', requireAuth, async (req, res) => {
+  // Bloquear carga de pronósticos por parte del usuario admin
+  if(req.user?.role === 'admin') {
+    return res.status(403).json({error: 'El user "admin" no pueden participar.'});
+  }
   const { match_id, home_goals, away_goals } = req.body;
   const m = await pool.query('SELECT start_time FROM matches WHERE id=$1', [match_id]);
   if (m.rowCount === 0) return res.status(404).json({ error: 'Partido no encontrado' });
