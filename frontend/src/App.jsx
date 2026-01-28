@@ -15,7 +15,7 @@ function App(){
   const logout = ()=>{ localStorage.removeItem('token'); setToken(null); setUser(null); };
   return (
     <div style={{ fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto', maxWidth: 960, margin: '0 auto', padding: 16 }}>
-      <h1>Prode LPF 2026</h1>
+      <h1>Prode Sinte LPF 2026</h1>
       {user && <div style={{color:'#666'}}>Sesión: <b>{user.username}</b> · Rol: <b>{user.role}</b></div>}
       {!token ? (
         <div style={{ display: 'flex', gap: 24 }}>
@@ -36,7 +36,7 @@ function App(){
           {tab==='fixture' ? <Fixture token={token} user={user} /> : (tab==='leader' ? <Leaderboard /> : (tab==='users'?<Users />:<Results/>))}
         </>
       )}
-      <p style={{marginTop:24, color:'#666'}}>Reglas: 3 pts por acertar signo (L/E/V) + 3 pts por resultado exacto. Cierre: 30 min antes del inicio.</p>
+      <p style={{marginTop:24, color:'#666'}}>Reglas: 3 pts por acertar resultado (L/E/V) + 3 pts por marcador exacto. Cierre: 30 min antes del inicio.</p>
     </div>
   );
 }
