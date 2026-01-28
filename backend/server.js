@@ -8,12 +8,14 @@ import predictionRoutes from './src/predictions.js';
 import scoreRoutes from './src/scores.js';
 import userRoutes from './src/users.js';
 import { bootstrap } from './src/bootstrap.js';
+import adminRoutes from './src/admin.js';
 
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use('/admin', adminRoutes);
 
 app.get('/health', (_, res) => res.json({ ok: true }));
 
