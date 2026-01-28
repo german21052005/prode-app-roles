@@ -44,6 +44,23 @@ export async function bootstrap(){
       reason TEXT,
       PRIMARY KEY (user_id, match_id)
     );
+
+    -- Auditoría básica de resultados
+    CREATE TABLE IF NOT EXISTS match_audit (
+      id SERIAL PRIMARY KEY,
+      match_id INTEGER NOT NULL REFERENCES matches(id) ON DELETE CASCADE,
+      by_user INTEGER REFERENCES users(id),
+      action VARCHAR(30) NOT NULL,
+      old_home INTEGER,
+      old_away INTEGER,
+      new_home INTEGER,
+      new_away INTEGER,
+      ip TEXT,
+      at TIMESTAMPTZ DEFAULT now()
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_match_audit_match ON match_audit(match_id);
+    CREATE INDEX IF NOT EXISTS idx_match_audit_at ON match_audit(at DESC);
   `);
 
   // Seed initial admin user if env provided
@@ -58,10 +75,10 @@ export async function bootstrap(){
     }catch(e){ console.warn('Admin seed error:', e.message); }
   }
 
-  // Seed fixture if empty
+  // Seed fixture if empty (keep your existing JSON path as in your project)
   const check = await pool.query('SELECT COUNT(*)::int AS c FROM matches');
   if (check.rows[0].c === 0) {
-    const dataPath = path.join(__dirname, '..','data', 'fixture_apertura_2026.json');
+    const dataPath = path.join(__dirname, '..', 'data', 'fixture_apertura_2026.json');
     try{
       const json = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
       for(const m of json.matches){
