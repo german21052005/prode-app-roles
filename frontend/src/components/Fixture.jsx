@@ -23,7 +23,6 @@ export default function Fixture({ token, user }){
           <div>
             {m.locked ? (
               <span style={{ color:'#b00' }}>Cerrado</span>
-            ) : (
             ) : user?.role==='admin'?(
               <span style={{color:'#666'}}>Sólo gestión (admin)</span>
             ) : (
@@ -35,7 +34,7 @@ export default function Fixture({ token, user }){
             )}
           </div>
           <div>
-            {!m.locked && <button onClick={()=>save(m.id)}>Guardar</button>}
+            {!m.locked && user?.role !== 'admin' && (<button onClick={()=>save(m.id)}>Guardar</button>)}
           </div>
         </div>
       ))}
