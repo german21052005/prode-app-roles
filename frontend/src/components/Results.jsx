@@ -1,3 +1,4 @@
+
 import React, { useEffect, useMemo, useState } from 'react';
 import api from '../api.js';
 
@@ -32,14 +33,16 @@ export default function Results(){
       await api.patch(`/matches/${m.id}/result`, { final_home_goals: h, final_away_goals: a });
       setMsg(`Resultado guardado: ${m.home} ${h}-${a} ${m.away}`);
       await load();
-    }catch(e){ setMsg(e.response?.data?.error || 'Error al guardar'); }
+    }catch(e){
+      if (e.response?.status === 409) setMsg('El resultado ya fue cargado (bloqueado para evitar re-edición).');
+      else setMsg(e.response?.data?.error || 'Error al guardar');
+    }
   };
 
   return (
     <div>
       <h3>Resultados (Admin)</h3>
       {msg && <div style={{ marginBottom:8, color: msg.startsWith('Resultado guardado')?'green':'#b00' }}>{msg}</div>}
-
       <div style={{ display:'flex', gap:8, alignItems:'center', marginBottom:12 }}>
         <label>Fecha:</label>
         <select value={round} onChange={e=>setRound(e.target.value)}>
@@ -47,7 +50,6 @@ export default function Results(){
           {rounds.map(r=> <option key={r} value={r}>{r}</option>)}
         </select>
       </div>
-
       <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 150px 160px 120px', gap:8, borderBottom:'1px solid #eee', paddingBottom:6, fontWeight:600 }}>
         <div>Local</div>
         <div>Visitante</div>
@@ -55,7 +57,6 @@ export default function Results(){
         <div>Resultado final</div>
         <div>Acción</div>
       </div>
-
       {filtered.map(m => (
         <div key={m.id} style={{ display:'grid', gridTemplateColumns:'1fr 1fr 150px 160px 120px', gap:8, alignItems:'center', borderBottom:'1px solid #f2f2f2', padding:'8px 0' }}>
           <div style={{ textAlign:'right' }}>{m.home}</div>
