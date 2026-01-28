@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import api from '../api.js';
-export default function Fixture(){
+export default function Fixture({ token, user }){
   const [matches, setMatches] = useState([]);
   const [mine, setMine] = useState({});
   const [msg, setMsg] = useState('');
@@ -21,7 +21,12 @@ export default function Fixture(){
           <div style={{ textAlign:'left' }}>vs {m.away}</div>
           <div>{new Date(m.start_time).toLocaleString()}</div>
           <div>
-            {m.locked ? (<span style={{ color:'#b00' }}>Cerrado</span>) : (
+            {m.locked ? (
+              <span style={{ color:'#b00' }}>Cerrado</span>
+            ) : (
+            ) : user?.role==='admin'?(
+              <span style={{color:'#666'}}>Sólo gestión (admin)</span>
+            ) : (
               <>
                 <input id={'h_'+m.id} type="number" min="0" style={{ width:60 }} defaultValue={mine[m.id]?.home_goals ?? ''} />
                 <span style={{ margin: '0 6px' }}>-</span>
