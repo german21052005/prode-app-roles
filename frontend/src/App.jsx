@@ -33,7 +33,7 @@ function App(){
             <button onClick={logout} style={{ marginLeft:'auto' }}>Salir</button>
 			</>}
           </div>
-          {tab==='fixture' ? <Fixture token={token} /> : (tab==='leader' ? <Leaderboard /> : (tab==='users'?<Users />:<Results/>))}
+          {tab==='fixture' ? <Fixture token={token} user={user} /> : (tab==='leader' ? <Leaderboard /> : (tab==='users'?<Users />:<Results/>))}
         </>
       )}
       <p style={{marginTop:24, color:'#666'}}>Reglas: 3 pts por acertar signo (L/E/V) + 3 pts por resultado exacto. Cierre: 30 min antes del inicio.</p>
