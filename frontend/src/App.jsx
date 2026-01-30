@@ -31,7 +31,7 @@ function App(){
     <Box sx={{ minHeight:'100vh', bgcolor: 'background.default' }}>
       <AppBar position="sticky" elevation={1} color="default">
         <Toolbar sx={{ gap: 2 }}>
-          <Typography variant="h6" sx={{ fontWeight: 700 }}>Prode LPF 2026</Typography>
+          <Typography variant="h6" sx={{ fontWeight: 700 }}>Prode Sinte LPF 2026</Typography>
           <Box sx={{ flexGrow: 1 }} />
           {user && (
             <Typography variant="body2" color="text.secondary">
