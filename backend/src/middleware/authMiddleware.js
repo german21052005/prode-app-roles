@@ -1,24 +1,21 @@
 
 import jwt from 'jsonwebtoken';
-import { pool } from '../db.js'; // ajustá si tu db.js está en otro path 
+//import { pool } from '../db.js'; // ajustá si tu db.js está en otro path 
 
-export async function requireAuth(req, res, next) {
+export function requireAuth(req, res, next) {
   const header = req.headers['authorization'] || '';
   const token = header.startsWith('Bearer ') ? header.slice(7) : null;
+
   if (!token) return res.status(401).json({ error: 'No autorizado' });
-  try{
+
+  try {
     const payload = jwt.verify(token, process.env.JWT_SECRET);
-    // Asumimos que payload trae { id }
-    const r = await pool.query('Select id, username, role from users where id=$1',
-    [userid]
-    );
-   if (r.rowCount === 0) {
-     return res.status(401).json({ error: 'Usuario no encontrado' });
-   }
-     req.user = r.rows[0]; //id, username, role
-    next();
-  }catch(e){ 
-console.error("JWT_VERIFY_ERROR:", e.message);
-  return res.status(401).json({ error: 'Token inválido' })
-; }
+    req.user = payload; // { id, username, role, iat, exp }
+    return next();
+  } catch (e) {
+    console.error("JWT_VERIFY_ERROR:", e.message);
+    return res.status(401).json({ error: 'Token inválido' });
+  }
 }
+
+
