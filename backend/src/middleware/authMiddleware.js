@@ -9,7 +9,7 @@ export async function requireAuth(req, res, next) {
   try{
     const payload = jwt.verify(token, process.env.JWT_SECRET);
     // Asumimos que payload trae { id }
-    const r = await pool.query('Select id, username, role from users where id=$1';
+    const r = await pool.query('Select id, username, role from users where id=$1',
     [userid]
     );
    if (r.rowCont === 0) {
