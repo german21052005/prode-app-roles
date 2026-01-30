@@ -1,4 +1,4 @@
-
+ar
 import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -71,7 +71,7 @@ function App(){
             {tab==='results' && <Results />}
 
             <Typography variant="caption" sx={{ mt: 4, display:'block', color:'text.secondary' }}>
-              Reglas: 3 pts por signo (L/E/V) + 3 pts por resultado exacto. Cierre: 30 min antes del inicio.
+              Reglas: 3 pts por acertar resultado (L-E-V) + 3 pts por marcador exacto. Cierre: 30 min antes del inicio.
             </Typography>
           </>
         )}
