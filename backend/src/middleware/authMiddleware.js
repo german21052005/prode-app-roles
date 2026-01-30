@@ -12,7 +12,7 @@ export async function requireAuth(req, res, next) {
     const r = await pool.query('Select id, username, role from users where id=$1',
     [userid]
     );
-   if (r.rowCont === 0) {
+   if (r.rowCount === 0) {
      return res.status(401).json({ error: 'Usuario no encontrado' });
    }
      req.user = r.rows[0]; //id, username, role
