@@ -17,5 +17,8 @@ export async function requireAuth(req, res, next) {
    }
      req.user = r.rows[0]; //id, username, role
     next();
-  }catch(e){ return res.status(401).json({ error: 'Token inválido' }); }
+  }catch(e){ 
+console.error("JWT_VERIFY_ERROR:", e.message);
+  return res.status(401).json({ error: 'Token inválido' })
+; }
 }
